@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paquete Emprendedor | Chechena Shirts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* FONDO ANIMADO */
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(-45deg,#000,#111,#001f1f,#000);
+    background-size:400% 400%;
+    animation:gradientMove 12s ease infinite;
+    z-index:-2;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* CONTENEDOR */
+.container{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    text-align:center;
+}
+
+/* ANIMACIÓN TEXTO */
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 1s ease forwards;
+}
+
+.fade:nth-child(1){animation-delay:0.2s;}
+.fade:nth-child(2){animation-delay:0.5s;}
+.fade:nth-child(3){animation-delay:0.8s;}
+.fade:nth-child(4){animation-delay:1.1s;}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    font-size:2.8rem;
+    font-weight:900;
+    background:linear-gradient(90deg,#ffffff,#00ffcc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:20px;
+}
+
+.info{
+    max-width:750px;
+    line-height:1.8;
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+.precio{
+    font-size:2rem;
+    font-weight:900;
+    color:#00ffcc;
+    margin:20px 0;
+}
+
+/* TARJETA */
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 30px rgba(0,255,200,0.2);
+    max-width:700px;
+    width:100%;
+}
+
+/* BOTONES */
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:12px 20px;
+    border-radius:10px;
+    background:#00ffcc;
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+}
+
+/* DATOS OCULTOS */
+.datos{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    background:#1a1a1a;
+    border-radius:10px;
+    font-size:0.95rem;
+}
+
+/* REDES */
+.redes{
+    margin-top:25px;
+}
+
+.redes .btn{
+    background:#222;
+    color:#00ffcc;
+    border:1px solid #00ffcc;
+}
+
+.redes .btn:hover{
+    background:#00ffcc;
+    color:black;
+}
+
+@media(max-width:768px){
+    h1{font-size:2rem;}
+}
+.envio{
+    color:#00ffcc;
+    font-weight:900;
+    font-size:1.2rem;
+    display:inline-block;
+    animation:brillo 1.5s infinite alternate;
+}
+
+@keyframes brillo{
+    from{
+        text-shadow:0 0 5px #00ffcc;
+    }
+    to{
+        text-shadow:0 0 20px #00ffcc;
+    }
+}
+.video-paquete{
+    margin:20px 0 30px 0;
+    display:flex;
+    justify-content:center;
+}
+
+.video-paquete video{
+    width:100%;
+    max-width:500px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,255,200,0.3);
+    transition:0.5s;
+}
+
+.video-paquete video:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 60px rgba(0,255,200,0.6);
+}
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+<div class="card fade">
+
+<h1>📦 PAQUETE EMPRENDEDOR – 8 PLAYERAS</h1>
+<div class="video-paquete fade">
+    <video autoplay muted loop playsinline>
+        <source src="videos/paquete-emprendedor.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+    </video>
+</div>
+<div class="info">
+🔥 Tú eliges los diseños que quieres incluir en tu paquete.<br>
+🏷 Incluimos etiqueta de cuello personalizada con el nombre de tu marca.<br><br>
+
+✅ Calidad premium en cada prenda<br>
+
+<span class="envio">🚚 ENVÍO GRATIS A TODO MÉXICO</span><br>
+
+💰 Ideal para empezar a vender y generar ganancias<br>
+🔥 Precio especial por paquete exclusivo para emprendedores<br><br>
+
+Pide tu Paquete Emprendedor con anticipación, ya que el tiempo de elaboración es de aproximadamente 6 días y el envío tarda entre 4 y 6 días.<br><br>
+
+En total, recibes tu pedido en un aproximado de 12 días.
+</div>
+
+<div class="precio">$2,000.00 MXN</div>
+
+<h3>Datos para pago: Toca una opción</h3>
+
+<div>
+    <div class="btn" onclick="mostrar('transferencia')">DATOS PARA TRANSFERENCIA</div>
+    <div class="btn" onclick="mostrar('deposito')">DATOS PARA DEPÓSITO</div>
+    <div class="btn" onclick="mostrar('paypal')">DATOS PARA PAYPAL</div>
+</div>
+
+<div id="transferencia" class="datos">
+    Banco: BBVA<br>
+    CLABE: 000000000000000000<br>
+    Nombre: Tu Nombre Aquí
+</div>
+
+<div id="deposito" class="datos">
+    Banco: OXXO / Ventanilla<br>
+    Número de Cuenta: 0000000000<br>
+    Nombre: Tu Nombre Aquí
+</div>
+
+<div id="paypal" class="datos">
+    Correo PayPal: tucorreo@email.com
+</div>
+
+<div class="info" style="margin-top:25px;">
+Una vez realizado el pago, envía tu comprobante por cualquiera de nuestras redes sociales y manda un correo electrónico para que se te otorgue acceso a los diseños.
+</div>
+
+<div class="redes">
+    <div class="btn">MANDAR MENSAJE</div>
+    <div class="btn">TIKTOK</div>
+    <div class="btn">WHATSAPP</div>
+    <div class="btn">INSTAGRAM</div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function mostrar(id){
+    const secciones = document.querySelectorAll('.datos');
+    secciones.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+</body>
+</html>

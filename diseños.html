@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megapacks | Chechena Shirts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Fondo animado */
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(-45deg,#000,#111,#001f1f,#000);
+    background-size:400% 400%;
+    animation:move 12s ease infinite;
+    z-index:-2;
+}
+
+@keyframes move{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.container{
+    padding:60px 20px;
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+    background:linear-gradient(90deg,#fff,#00ffcc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitulo{
+    color:#aaa;
+    margin-bottom:50px;
+}
+
+/* Cards populares */
+.populares{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+    margin-bottom:80px;
+}
+
+.card-grande{
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+.card-grande:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 40px rgba(0,255,200,0.4);
+}
+
+.card-grande h2{
+    font-size:1.8rem;
+    margin-bottom:15px;
+}
+
+.card-grande p{
+    color:#bbb;
+}
+
+/* Accesibles */
+.accesibles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card-peque{
+    background:rgba(255,255,255,0.04);
+    padding:20px;
+    border-radius:15px;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.card-peque:hover{
+    background:rgba(0,255,200,0.1);
+    transform:translateY(-5px);
+}
+
+.card-peque h3{
+    margin-bottom:10px;
+}
+
+.card-peque p{
+    font-size:0.9rem;
+    color:#aaa;
+}
+
+/* Animación entrada */
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 1s forwards;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+<h1 class="fade">MEGAPACKS DE DISEÑOS</h1>
+<p class="subtitulo fade">Elige el pack que mejor se adapte a tu estilo y negocio</p>
+
+<!-- MÁS POPULARES -->
+<h2 style="margin-bottom:30px;">🔥 MÁS POPULARES</h2>
+
+<div class="populares">
+
+<div class="card-grande fade" onclick="location.href='megapack-chechena.html'">
+    <h2>MEGAPACK CHECHENA</h2>
+    <p>Diseños exclusivos, listos para reventa. Ideal para marcas urbanas.</p>
+    <p></p>📦 Incluye +40,000 diseños</p>
+</div>
+
+<div class="card-grande fade" onclick="location.href='megapack-ojito.html'">
+    <h2>MEGAPACK OJITO</h2>
+    <p>Diseños modernos y virales que destacan en tendencia.</p>
+        <p>🚨 MÁS DE +50,000 DISEÑOS LISTOS PARA MANDAR A IMPRIMIR 🚨</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

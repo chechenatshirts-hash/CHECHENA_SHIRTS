@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megapack Chechena | Chechena Shirts</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+background:linear-gradient(-45deg,#fff7e6,#ffeacc,#fff1d6,#ffeacc);
+background-size:400% 400%;
+animation:fondoAnim 15s ease infinite;
+color:#333;
+overflow-x:hidden;
+}
+@keyframes fondoAnim{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+.container{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+}
+.card{
+background:rgba(255,255,255,0.85);
+padding:40px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 40px rgba(200,150,100,0.3);
+max-width:900px;
+width:100%;
+text-align:center;
+}
+h1{
+font-size:2.5rem;
+background:linear-gradient(90deg,#d4a373,#f5cda7,#e9b89f);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:25px;
+}
+
+/* CARRUSEL */
+.carrusel{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+margin-bottom:30px;
+}
+.slides{
+display:flex;
+transition:transform .5s ease;
+}
+.slide{
+min-width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#fdf6ec;
+}
+.slide img,
+.slide video{
+width:100%;
+height:auto;
+max-height:80vh;      /* se adapta a laptop, tablet y celular */
+object-fit:contain;   /* 👈 no recorta */
+border-radius:20px;
+}
+/* FLECHAS */
+.flecha{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(255,255,255,.6);
+border:none;
+color:#333;
+font-size:1.5rem;
+padding:10px 15px;
+cursor:pointer;
+border-radius:50%;
+}
+.izquierda{left:15px;}
+.derecha{right:15px;}
+.flecha:hover{background:#d4a373; color:white;}
+
+/* INFO */
+.info{
+line-height:1.8;
+color:#333;
+margin-bottom:25px;
+text-align:left;
+background:rgba(255,255,255,0.6);
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(200,150,100,0.2);
+}
+.precio{
+font-size:2.5rem;
+font-weight:900;
+color:#d4a373;
+margin:20px 0;
+}
+.tachado{
+text-decoration:line-through;
+color:#888;
+font-size:1.2rem;
+}
+
+/* BOTONES */
+.btn{
+display:inline-block;
+margin:10px;
+padding:12px 20px;
+border-radius:10px;
+background:#d4a373;
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+text-decoration:none;
+}
+.btn:hover{
+background:#f5cda7;
+color:#333;
+}
+.datos{
+display:none;
+margin-top:15px;
+padding:15px;
+background:#fff1d6;
+border-radius:10px;
+text-align:left;
+}
+
+/* REDES */
+.redes{
+margin-top:25px;
+text-align:center;
+}
+.redes .btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+margin:10px;
+padding:12px 20px;
+border-radius:10px;
+background:#d4a373;
+color:white;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+font-size:1rem;
+}
+.redes .btn:hover{
+background:#f5cda7;
+color:#333;
+transform:scale(1.05);
+}
+.redes .btn i{
+font-size:1.2rem;
+}
+
+/* MENSAJE */
+.mensaje{
+margin-top:40px;
+padding:35px;
+background:rgba(255,250,240,0.8);
+border-radius:20px;
+box-shadow:0 0 25px rgba(200,150,100,0.3);
+text-align:center;
+color:#333;
+}
+.boton{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#d4a373;
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+.boton:hover{
+background:#f5cda7;
+color:#333;
+transform:scale(1.05);
+}
+
+/* RESEÑAS */
+.reseñas{
+margin-top:60px;
+text-align:center;
+}
+.reseñas h2{
+margin-bottom:30px;
+color:#d4a373;
+}
+.carrusel-reseñas{
+position:relative;
+overflow:hidden;
+margin-top:30px;
+border-radius:20px;
+}
+.slides-reseñas{
+display:flex;
+transition: transform .5s ease;
+}
+.reseña-card{
+min-width:100%;
+background:rgba(255,255,255,0.7);
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(200,150,100,0.2);
+text-align:left;
+transition:transform .3s, box-shadow .3s;
+}
+.reseña-card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px rgba(200,150,100,0.4);
+}
+.reseña-card h4{
+color:#d4a373;
+margin-bottom: 8px;
+}
+.stars{
+color:gold;
+margin-bottom: 10px;
+}
+.carrusel-reseñas .flecha{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(255,255,255,.6);
+border:none;
+color:#333;
+font-size:1.5rem;
+padding:10px 15px;
+cursor:pointer;
+border-radius:50%;
+}
+.carrusel-reseñas .izquierda{left:10px;}
+.carrusel-reseñas .derecha{right:10px;}
+.carrusel-reseñas .flecha:hover{background:#d4a373;color:white;}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>🔥 MEGAPACK CHECHENA🔥</h1>
+
+<!-- CARRUSEL -->
+<div class="carrusel">
+<div class="slides" id="slides">
+<div class="slide">
+<video autoplay muted playsinline loop>
+<source src="imagenes/video3.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+<button class="flecha izquierda" onclick="mover(-1)">❮</button>
+<button class="flecha derecha" onclick="mover(1)">❯</button>
+</div>
+
+<div class="info" style="line-height:2; background:rgba(255,245,230,0.8); padding:25px; border-radius:15px; box-shadow:0 0 25px rgba(200,150,100,0.3); text-align:left;">
+<h2 style="color:#d48a5e; margin-bottom:15px;">🚨 ¡Transforma tu negocio de playeras HOY MISMO! 🚨</h2>
+
+📦 **Más de 40,000 diseños listos para usar**: desde urbanos hasta vintage, ¡todo lo que necesitas para destacar!<br>
+🔄 **Actualizaciones semanales totalmente GRATIS**: cada semana nuevos diseños para mantener tu catálogo siempre fresco.<br>
+🎨 **Alta resolución y calidad profesional**: listos para imprimir sin perder ni un solo detalle.<br>
+🚀 **Impulsa tu emprendimiento desde el primer día**: ideal para negocios de estampado, personalización o tiendas online.<br>
+💰 **Todo en un único pago**: sin suscripciones, sin mensualidades, acceso inmediato a todo el contenido.<br><br>
+
+<span style="color:#d48a5e; font-weight:700; font-size:1.3rem;">¡Tu éxito creativo empieza aquí! 🔥</span>
+</div>
+
+<div>
+<span class="tachado">$450 MXN</span><br>
+<div class="precio">$250 MXN</div>
+</div>
+
+<h3>Toca una opción para ver datos de pago:</h3>
+<div>
+<div class="btn" onclick="mostrar('transferencia')">TRANSFERENCIA</div>
+<div class="btn" onclick="mostrar('deposito')">DEPÓSITO</div>
+<div class="btn" onclick="mostrar('paypal')">PAYPAL</div>
+</div>
+
+<div id="transferencia" class="datos">
+Banco: NU<br>
+CLABE: 638180010199197850<br>
+Nombre: MIRNA ALEGRIA
+</div>
+<div id="deposito" class="datos">
+Depósito en tiendas como OXXO, Soriana, Chedraui:<br>
+Código: 5101 2507 7189 5327
+</div>
+<div id="paypal" class="datos">
+Correo PayPal: debanny150815@gmail.com
+</div>
+
+<div class="info" style="margin-top:20px;">
+Una vez realizado el pago, envía tu comprobante de pago y un correo electronico por nuestras redes sociales para otorgarte acceso inmediato.
+</div>
+
+<!-- REDES SOCIALES -->
+<div class="redes">
+<a class="btn" href="https://wa.me/529212337934" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a class="btn" href="https://www.instagram.com/chechena_shirts?igsh=MTkxamNydXJiNHpyYw==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+<a class="btn" href="https://www.facebook.com/share/1GyQAhvMFY/" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+<a class="btn" href="https://www.tiktok.com/@chechena_shirts?_r=1&_t=ZS-94J5Y5G7Rpd" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+</div>
+<!-- INVITACIÓN AL GRUPO -->
+<div class="mensaje" style="background:rgba(255,245,230,0.9); margin-top:30px;">
+<h2>🚀 ÚNETE A NUESTRO GRUPO DE EMPRENDEDORES</h2>
+<p style="margin-bottom:20px; color:#333;">
+En este grupo comparto tips, ayudas y todos los <strong>nuevos diseños que agrego al megapack</strong>. 
+Es un espacio para aprender, inspirarte y llevar tu negocio de playeras al siguiente nivel.
+</p>
+<a class="boton" href="https://chat.whatsapp.com/E7sagZb9fAn7ekZk1p5INI" target="_blank">💬 UNIRME AL GRUPO</a>
+</div>
+<div class="mensaje">
+<h2>¿Tienes alguna duda antes de comprar?</h2>
+<p style="margin-bottom:20px;">
+Si necesitas más información sobre el megapack, formas de pago o acceso, escríbenos directamente.
+</p>
+<button class="boton" onclick="enviarWhatsApp()">💬 HABLAR POR WHATSAPP</button>
+</div>
+
+<!-- RESEÑAS -->
+<div class="reseñas">
+<h2>⭐ RESEÑAS DE CLIENTES ⭐</h2>
+<div class="carrusel-reseñas">
+<div class="slides-reseñas" id="slidesReseñas">
+
+<div class="reseña-card">
+<h4>Juan Pérez</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Excelente megapack. Recuperé mi inversión en la primera semana.</p>
+</div>
+<div class="reseña-card">
+<h4>Yazminarellano</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Exlente me encantaron las imagenes y super facil de usar mucha variedad para escojer.</p>
+</div>
+<div class="reseña-card">
+<h4>Donerling</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Excelente Pack, Muy agradecido por la ayuda continua que nos da y siempre actualizando el pack. muchas gracias... RECOMENDADO.</p>
+</div>
+<div class="reseña-card">
+<h4>Josafat Ontiveros</h4>
+<div class="stars">⭐⭐⭐⭐</div>
+<p>En vdd un buen pack que contiene lo que describe, me ayudó a sacar muchas cosas adelante.</p>
+</div>
+<div class="reseña-card">
+<h4>Todalapublicidad</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Una gran variedad de diseños esperando ser utilizados en el estampado de playeras 👍👍 gracias 👍👍👍.</p>
+</div>
+<div class="reseña-card">
+<h4>Roberto</h4>
+<div class="stars">⭐⭐⭐⭐</div>
+<p>Buenos diseños la verdad me está ayudando muchísimo en mi emprendimiento</p>
+</div>
+<div class="reseña-card">
+<h4>Diegocazares</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Excelente servicio rápido y eficiente, muy buena calidad en diseño y en tendencia, 100%recomendado</p>
+</div>
+</div>
+<button class="flecha izquierda" onclick="moverReseña(-1)">❮</button>
+<button class="flecha derecha" onclick="moverReseña(1)">❯</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+let index=0;
+function mover(direccion){
+const slides=document.getElementById("slides");
+const total=slides.children.length;
+index+=direccion;
+if(index<0) index=total-1;
+if(index>=total) index=0;
+slides.style.transform="translateX(-"+(index*100)+"%)";
+}
+
+function mostrar(id){
+document.querySelectorAll(".datos").forEach(sec=>sec.style.display="none");
+document.getElementById(id).style.display="block";
+}
+
+function enviarWhatsApp(){
+let numero="529212337934";
+let mensaje="Hola, tengo una duda sobre el MEGAPACK CHECHENA.";
+let url="https://wa.me/"+numero+"?text="+encodeURIComponent(mensaje);
+window.open(url,"_blank");
+}
+
+// RESEÑAS
+let indexReseña=0;
+function moverReseña(direccion){
+const slides=document.getElementById("slidesReseñas");
+const total=slides.children.length;
+indexReseña+=direccion;
+if(indexReseña<0) indexReseña=total-1;
+if(indexReseña>=total) indexReseña=0;
+slides.style.transform="translateX(-"+(indexReseña*100)+"%)";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background: radial-gradient(circle at top,#111,#000 70%);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+.main-header{
+padding:60px 20px 40px;
+animation: fadeIn 1.5s ease;
+}
+
+.logo-img{
+width:120px;
+margin-bottom:20px;
+filter: drop-shadow(0 0 15px #9d00ff);
+}
+
+.main-header h1{
+font-size:2.5rem;
+letter-spacing:3px;
+background: linear-gradient(90deg,#00f0ff,#9d00ff,#ff00c8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.slogan{
+margin-top:10px;
+color:#aaa;
+}
+
+/* MENU */
+
+.menu-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:50px 10%;
+}
+
+.menu-card{
+background:rgba(20,20,30,0.8);
+padding:40px 20px;
+border-radius:20px;
+text-decoration:none;
+color:white;
+transition:0.4s;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.menu-card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 25px rgba(157,0,255,0.6);
+}
+
+.menu-card h2{
+margin-bottom:15px;
+font-size:1.2rem;
+}
+
+.menu-card p{
+font-size:0.9rem;
+color:#ccc;
+}
+
+.destacado{
+border:2px solid #9d00ff;
+box-shadow:0 0 20px rgba(157,0,255,0.5);
+}
+
+/* COTIZACION */
+
+.cotizacion{
+padding:60px 10%;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+}
+
+form input, form textarea{
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+}
+
+.btn{
+padding:12px;
+background:linear-gradient(45deg,#00f0ff,#9d00ff);
+border:none;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+footer{
+padding:30px;
+margin-top:40px;
+background:black;
+}
+
+/* Animación */
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(-20px);}
+to{opacity:1; transform:translateY(0);}
+}
+.page-header{
+text-align:center;
+padding:40px;
+}
+
+.page-header a{
+color:#9d00ff;
+text-decoration:none;
+}
+
+.pack{
+max-width:800px;
+margin:50px auto;
+text-align:center;
+padding:20px;
+}
+
+.carousel{
+position:relative;
+max-width:400px;
+margin:20px auto;
+}
+
+.carousel img{
+width:100%;
+display:none;
+border-radius:15px;
+}
+
+.carousel img.active{
+display:block;
+}
+
+.pago{
+margin-top:20px;
+padding:15px;
+background:rgba(157,0,255,0.1);
+border-radius:10px;
+}
+/* HERO COTIZACION */
+
+.cotizacion-hero{
+max-width:900px;
+margin:40px auto;
+padding:20px;
+text-align:center;
+}
+
+.cotizacion-hero h2{
+font-size:1.8rem;
+margin-bottom:15px;
+background:linear-gradient(90deg,#00f0ff,#9d00ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.cotizacion-hero p{
+color:#ccc;
+line-height:1.6;
+}
+
+/* BENEFICIOS */
+
+.beneficios{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:40px 10%;
+}
+
+.beneficio{
+background:rgba(20,20,30,0.8);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.beneficio:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px rgba(157,0,255,0.5);
+}
+
+/* FORMULARIO */
+
+.form-section{
+padding:40px 10%;
+text-align:center;
+}
+
+.form-card{
+max-width:500px;
+margin:30px auto;
+display:flex;
+flex-direction:column;
+background:rgba(20,20,30,0.9);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea{
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+background:#111;
+color:white;
+}
+
+.btn-cotizar{
+padding:14px;
+margin-top:10px;
+background:linear-gradient(45deg,#00f0ff,#9d00ff);
+border:none;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+border-radius:12px;
+}
+
+.btn-cotizar:hover{
+transform:scale(1.05);
+}
+
+/* CONFIANZA */
+
+.confianza{
+margin:40px auto;
+text-align:center;
+color:#aaa;
+font-size:0.9rem;
+}

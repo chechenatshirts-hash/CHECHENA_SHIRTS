@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megapack Ojito | Chechena Shirts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#000814,#001d3d,#003566,#000814);
+background-size:400% 400%;
+animation:galaxia 15s ease infinite;
+color:white;
+overflow-x:hidden;
+}
+
+@keyframes galaxia{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.container{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:25px;
+backdrop-filter:blur(15px);
+box-shadow:0 0 40px rgba(0,180,255,0.3);
+max-width:900px;
+width:100%;
+text-align:center;
+}
+
+h1{
+font-size:2.5rem;
+background:linear-gradient(90deg,#4cc9f0,#00b4ff,#90e0ef);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:25px;
+}
+
+/* CARRUSEL */
+.carrusel{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+margin-bottom:30px;
+}
+
+.slides{
+display:flex;
+transition:transform .5s ease;
+}
+
+.slide{
+min-width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+}
+
+.slide img,
+.slide video{
+width:100%;
+height:auto;
+max-height:80vh;      /* se adapta a laptop, tablet y celular */
+object-fit:contain;   /* 👈 no recorta */
+border-radius:20px;
+}
+
+/* FLECHAS */
+.flecha{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,.6);
+border:none;
+color:white;
+font-size:1.5rem;
+padding:10px 15px;
+cursor:pointer;
+border-radius:50%;
+}
+
+.izquierda{left:15px;}
+.derecha{right:15px;}
+
+.flecha:hover{
+background:#00b4ff;
+}
+
+/* INFO */
+.info{
+line-height:1.8;
+color:#cceeff;
+margin-bottom:25px;
+text-align:left;
+}
+
+.precio{
+font-size:2.5rem;
+font-weight:900;
+color:#00e5ff;
+margin:20px 0;
+}
+
+.tachado{
+text-decoration:line-through;
+color:#888;
+font-size:1.2rem;
+}
+
+/* BOTONES */
+.btn{
+display:inline-block;
+margin:10px;
+padding:12px 20px;
+border-radius:10px;
+background:#00b4ff;
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:white;
+color:black;
+}
+
+.datos{
+display:none;
+margin-top:15px;
+padding:15px;
+background:#111;
+border-radius:10px;
+text-align:left;
+}
+
+.redes{
+margin-top:25px;
+}
+
+.redes .btn{
+background:#111;
+border:1px solid #00b4ff;
+}
+
+.redes .btn:hover{
+background:#00b4ff;
+color:black;
+}
+
+@media(max-width:768px){
+h1{font-size:1.8rem;}
+}
+.mensaje{
+margin-top:40px;
+padding:35px;
+background:rgba(0,0,0,0.6);
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,180,255,0.3);
+text-align:center;
+}
+
+.mensaje h2{
+font-size:1.8rem;
+margin-bottom:15px;
+}
+
+.boton{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#00b4ff;
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.boton:hover{
+background:white;
+color:black;
+transform:scale(1.05);
+}
+.reseñas{
+margin-top:60px;
+text-align:center;
+}
+
+.reseñas h2{
+margin-bottom:30px;
+color:#00e5ff;
+}
+
+.grid-reseñas{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.reseña{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,180,255,0.2);
+text-align:left;
+transition:.3s;
+}
+
+.reseña:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px rgba(0,180,255,0.4);
+}
+
+.estrellas{
+color:gold;
+margin:8px 0;
+}
+.carrusel-reseñas{
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+.slides-reseñas{
+  display: flex;
+  transition: transform .5s ease;
+}
+
+.reseña-card{
+  min-width: 100%;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,180,255,0.2);
+  text-align: left;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.reseña-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0,180,255,0.4);
+}
+
+.reseña-card h4{
+  color:#00e5ff;
+  margin-bottom: 8px;
+}
+
+.stars{
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.carrusel-reseñas .flecha{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,.6);
+  border:none;
+  color:white;
+  font-size:1.5rem;
+  padding:10px 15px;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.carrusel-reseñas .izquierda{left:10px;}
+.carrusel-reseñas .derecha{right:10px;}
+.carrusel-reseñas .flecha:hover{background:#00b4ff;}
+.redes .btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin:10px;
+  padding:12px 20px;
+  border-radius:10px;
+  background:#00b4ff;
+  color:white;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
+  font-size:1rem;
+}
+
+.redes .btn:hover{
+  background:white;
+  color:black;
+  transform:scale(1.05);
+}
+
+.redes .btn i{
+  font-size:1.2rem;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>👁️ MEGAPACK OJITO</h1>
+
+<!-- CARRUSEL MANUAL -->
+<div class="carrusel">
+<div class="slides" id="slides">
+
+<div class="slide">
+<video autoplay muted playsinline loop>
+<source src="imagenes/video1.mp4" type="video/mp4">
+</video>
+</div>
+<div class="slide">
+<video autoplay muted playsinline loop>
+<source src="imagenes/video2.mp4" type="video/mp4">
+</video>
+</div>
+
+
+
+</div>
+
+<button class="flecha izquierda" onclick="mover(-1)">❮</button>
+<button class="flecha derecha" onclick="mover(1)">❯</button>
+</div>
+
+<div class="info">
+
+<h2 style="color:#00e5ff; margin-bottom:15px;">🚨 +50,000 DISEÑOS PROFESIONALES LISTOS PARA PRODUCIR 🚨</h2>
+
+<p style="margin-bottom:15px;">
+No es solo un paquete de imágenes.  
+Es un <strong>sistema completo de producción y venta</strong> para negocios reales de estampado.
+</p>
+
+<hr style="margin:20px 0; border:1px solid rgba(255,255,255,0.1);">
+
+<h3 style="color:#4cc9f0;">🎨 ¿QUÉ INCLUYE EL MEGAPACK OJITO?</h3>
+
+✔ +50,000 diseños en PNG y PDF listos para impresión directa (DTF)<br>
+✔ Gran parte con <strong>efecto semitono profesional ya aplicado</strong><br>
+✔ Calidad optimizada para estampado textil (DTF y sublimación)<br>
+✔ Más de 20 temáticas comerciales que sí venden:<br><br>
+
+<span style="color:#90e0ef;">
+Anime • Urbano / Streetwear • Frases virales • Retro & Vintage • Fitness • Cultura Mexicana • Tendencias actuales y más
+</span><br><br>
+
+✔ Acceso inmediato por Google Drive<br>
+✔ Compatibles con cualquier software de estampado<br>
+
+<hr style="margin:20px 0; border:1px solid rgba(255,255,255,0.1);">
+
+<h3 style="color:#4cc9f0;">🧰 EXTRAS PRO INCLUIDOS</h3>
+
+Este no es solo un banco de diseños. Es una ventaja competitiva completa:
+
+<br>🖥️ PROGRAMAS</br>
+🖥️ Acciones automáticas para Photoshop:<br>
+— Quitar fondo automático<br>
+— Crear mockups profesionales<br>
+— Aplicar semitonos en segundos<br>
+— Bordado digital efecto hilo<br><br>
+
+📦 Plantillas de trabajo + recursos vectoriales<br>
+📚 Guías prácticas paso a paso<br>
+
+📊 Excel PRO para calcular:<br>
+— Costos reales<br>
+— Punto de equilibrio<br>
+— Precio de venta correcto<br>
+— Ganancias reales<br>
+
+<hr style="margin:20px 0; border:1px solid rgba(255,255,255,0.1);">
+
+<h3 style="color:#4cc9f0;">🎯 IDEAL PARA:</h3>
+
+✔ Marcas de ropa urbana<br>
+✔ Negocios de estampado DTF o sublimación<br>
+✔ Diseñadores freelance<br>
+✔ Emprendedores que quieren vender sin perder meses diseñando<br>
+
+<hr style="margin:20px 0; border:1px solid rgba(255,255,255,0.1);">
+
+<h3 style="color:#00e5ff;">⚡ VENTAJAS COMPETITIVAS</h3>
+
+👁️ Miles de diseños listos para producir hoy mismo<br>
+⚡ Ahorra meses de trabajo creativo<br>
+📈 Expande tu catálogo de inmediato<br>
+💰 Maximiza márgenes con herramientas profesionales<br>
+
+</div>
+
+<div>
+<span class="tachado">$699 MXN</span><br>
+<div class="precio">$400 MXN</div>
+</div>
+
+<h3>Toca una opción para ver datos de pago:</h3>
+
+<div>
+<div class="btn" onclick="mostrar('transferencia')">TRANSFERENCIA</div>
+<div class="btn" onclick="mostrar('deposito')">DEPÓSITO</div>
+<div class="btn" onclick="mostrar('paypal')">PAYPAL</div>
+</div>
+
+<div id="transferencia" class="datos">
+Banco: NU<br>
+CLABE: 638180010199197850<br>
+Nombre: MIRNA ALEGRIA<br>
+CONCEPTO: TU NOMBRE<br>
+</div>
+
+<div id="deposito" class="datos">
+Para depositarme en tiendas como OXXO, Soriana, Kiosko, Chedraui, Farmacias del Ahorro y Waldo’s sin tarjeta:<br>
+Código: 5101 2507 7189 5327<br>
+</div>
+
+<div id="paypal" class="datos">
+Correo PayPal: debanny150815@gmail.com
+</div>
+
+<div class="info" style="margin-top:20px;">
+Una vez realizado el pago, envía tu comprobante de pago y un correo electronico por nuestras redes sociales para otorgarte acceso inmediato.
+</div>
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<div class="redes" style="text-align:center; margin-top:30px;">
+  <a class="btn" href="https://wa.me/529212337934?text=Hola,%20quiero%20mi%20megapack%20ojito,%20aqui%20esta%20mi%20comprobante%20de%20pago" target="_blank">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+  <a class="btn" href="https://www.instagram.com/chechena_shirts?igsh=MTkxamNydXJiNHpyYw==" target="_blank">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+  <a class="btn" href="https://www.facebook.com/share/1GyQAhvMFY/" target="_blank">
+    <i class="fab fa-facebook-f"></i> Facebook
+  </a>
+  <a class="btn" href="https://www.tiktok.com/@chechena_shirts?_r=1&_t=ZS-94J5Y5G7Rpd" target="_blank">
+    <i class="fab fa-tiktok"></i> TikTok
+  </a>
+
+  </a>
+</div>
+<!-- INVITACIÓN AL GRUPO -->
+<div class="mensaje" style="background:rgba(37, 9, 94, 0.9); margin-top:30px;">
+<h2>🚀 ÚNETE A NUESTRO GRUPO DE EMPRENDEDORES</h2>
+<p style="margin-bottom:20px; color:#ffffff;">
+En este grupo comparto tips, ayudas y todos los <strong>nuevos diseños que agrego al megapack</strong>. 
+Es un espacio para aprender, inspirarte y llevar tu negocio de playeras al siguiente nivel.
+</p>
+<a class="boton" href="https://chat.whatsapp.com/E7sagZb9fAn7ekZk1p5INI" target="_blank">💬 UNIRME AL GRUPO</a>
+</div>
+<div class="mensaje">
+
+<h2>¿Tienes alguna duda antes de comprar?</h2>
+
+<p style="margin-bottom:20px; color:#ccc;">
+Si necesitas más información sobre el contenido del megapack, formas de pago o acceso,
+puedes escribirnos directamente.
+</p>
+
+<button class="boton" onclick="enviarWhatsApp()">
+💬 HABLAR POR WHATSAPP
+</button>
+<div class="reseñas">
+  <h2>⭐ RESEÑAS DE CLIENTES ⭐</h2>
+
+  <div class="carrusel-reseñas">
+    <div class="slides-reseñas" id="slidesReseñas">
+
+
+      <div class="reseña-card">
+        <h4>María López</h4>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Los diseños están listos para imprimir. Me ahorró meses de trabajo.</p>
+      </div>
+
+      <div class="reseña-card">
+        <h4>Carlos</h4>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Muy buena calidad y los extras PRO valen muchísimo la pena.</p>
+      </div>
+
+      <div class="reseña-card">
+        <h4>Lucía</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>¡Increíble calidad y variedad de diseños! Super recomendado.</p>
+      </div>
+      <div class="reseña-card">
+        <h4>JUANMA</h4>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Muy buenos diseños igual los prgramas excelentes.</p>
+      </div>
+
+    </div>
+
+    <button class="flecha izquierda" onclick="moverReseña(-1)">❮</button>
+    <button class="flecha derecha" onclick="moverReseña(1)">❯</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<script>
+let index=0;
+
+function mover(direccion){
+const slides=document.getElementById("slides");
+const total=slides.children.length;
+
+index+=direccion;
+
+if(index<0) index=total-1;
+if(index>=total) index=0;
+
+slides.style.transform="translateX(-"+(index*100)+"%)";
+}
+
+function mostrar(id){
+document.querySelectorAll(".datos").forEach(sec=>sec.style.display="none");
+document.getElementById(id).style.display="block";
+}
+</script>
+<script>
+function enviarWhatsApp(){
+let numero="529212337934"; // tu número real
+let mensaje="Hola, tengo una duda sobre el MEGAPACK OJITO.";
+let url="https://wa.me/"+numero+"?text="+encodeURIComponent(mensaje);
+window.open(url,"_blank");
+}
+let indexReseña = 0;
+
+function moverReseña(direccion){
+  const slides = document.getElementById("slidesReseñas");
+  const total = slides.children.length;
+
+  indexReseña += direccion;
+  if(indexReseña < 0) indexReseña = total - 1;
+  if(indexReseña >= total) indexReseña = 0;
+
+  slides.style.transform = "translateX(-"+(indexReseña*100)+"%)";
+}
+</script>
+</body>
+</html>

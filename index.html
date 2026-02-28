@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chechena Shirts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* FONDO GALAXIA */
+body{
+  background: linear-gradient(-45deg,#000000,#1a1a1a,#2b2b2b,#000000);
+  background-size: 400% 400%;
+  animation: galaxia 20s ease infinite;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+@keyframes galaxia{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* HEADER HERO */
+.main-header{
+  text-align:center;
+  padding:60px 20px;
+  background: rgba(0,0,0,0.7);
+  border-radius:25px;
+  margin:30px;
+  box-shadow:0 0 50px rgba(0,180,255,0.5);
+  position:relative;
+}
+
+.logo-img{
+  width:140px;
+  height:auto;
+  margin-bottom:25px;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(0,180,255,0.3);
+  transition: transform 0.5s;
+}
+
+.logo-img:hover{
+  transform: scale(1.1);
+}
+
+.main-header h1{
+  font-size:3rem;
+  color:#00e5ff;
+  text-shadow:2px 2px 15px rgba(0,180,255,0.5);
+  margin-bottom:20px;
+}
+
+.main-header .hero-text{
+  font-size:1.1rem;
+  line-height:1.8;
+  max-width:950px;
+  margin:0 auto;
+  padding:25px;
+  background: rgba(0,0,0,0.4);
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(0,180,255,0.3);
+  transition: transform 0.3s;
+}
+
+.main-header .hero-text strong{
+  color:#00e5ff;
+  font-weight:700;
+}
+
+.main-header .hero-text:hover{
+  transform: scale(1.02);
+}
+
+/* MENU SECCION */
+.menu-section{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.menu-card{
+  background: rgba(0,0,0,0.65);
+  padding:30px 20px;
+  border-radius:25px;
+  text-align:center;
+  color:#cceeff;
+  text-decoration:none;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.menu-card:hover{
+  transform: translateY(-5px);
+  box-shadow:0 0 35px rgba(0,180,255,0.6);
+  background: rgba(0,0,0,0.8);
+}
+
+.menu-card h2{
+  margin-bottom:10px;
+  color:#00e5ff;
+  font-size:1.5rem;
+}
+
+.menu-card p{
+  font-size:1rem;
+  color:#cceeff;
+}
+
+.destacado{
+  border:2px solid #00e5ff;
+  box-shadow:0 0 25px rgba(0,180,255,0.4);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px 0;
+  color:#00e5ff;
+  margin-top:50px;
+  font-weight:500;
+  text-shadow:1px 1px 10px rgba(0,180,255,0.3);
+}
+
+/* BOTONES */
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  margin:10px;
+  border-radius:10px;
+  background:#00b4ff;
+  color:white;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#00e5ff;
+  color:black;
+  transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .main-header h1{font-size:2.2rem;}
+  .main-header .hero-text{font-size:1rem; padding:20px;}
+  .menu-card h2{font-size:1.3rem;}
+}
+
+@media(max-width:480px){
+  .main-header h1{font-size:1.8rem;}
+  .main-header .hero-text{font-size:0.95rem; padding:15px;}
+  .menu-card h2{font-size:1.1rem;}
+  .menu-card p{font-size:0.9rem;}
+}
+</style>
+</head>
+<body>
+
+<header class="main-header">
+  <img src="imagenes/logo.png" class="logo-img">
+  <h1>CHECHENA SHIRTS</h1>
+  
+  <div class="hero-text">
+    👋 ¡Bienvenido a <strong>Chechena Shirts</strong>!<br><br>
+    💡 Si quieres emprender y no tienes diseños, contamos con <strong>Paquetes de Diseños</strong> listos para vender.<br>
+    👕 Si quieres personalizar playeras con tus propios diseños y etiquetas, tenemos el <strong>Paquete Emprendedor</strong> ideal para ti.<br>
+    🧮 ¿Quieres calcular cuánto vender tus playeras? Usa nuestra <strong>Calculadora DTF</strong> para fijar tu precio ideal.<br>
+    🏪 ¿Necesitas una cotización para tu negocio, equipo, un diseño que viste o tus propios diseños? Tenemos la opción de <strong>Cotización</strong> personalizada.<br><br>
+    🚀 Somos tu aliado confiable en Veracruz, México, para lanzar, crecer y potenciar tu emprendimiento de playeras.
+  </div>
+</header>
+
+<section class="menu-section">
+
+  <a href="diseños.html" class="menu-card destacado">
+    <h2>🎨 Paquetes de Diseños</h2>
+    <p>Megapack Chechena y Ojito</p>
+  </a>
+
+  <a href="emprendedor.html" class="menu-card">
+    <h2>📦 Paquete Emprendedor</h2>
+    <p>8 piezas por $2000 MXN</p>
+  </a>
+
+  <a href="https://share.google/hBu2htT4zZP4jSRc0" class="menu-card">
+    <h2>🧮 Calculadora DTF</h2>
+    <p>Calcula tu precio ideal y maximiza tus ganancias</p>
+  </a>
+
+  <a href="cotizacion.html" class="menu-card">
+    <h2>🏪 Cotización</h2>
+    <p>Pedidos personalizados: tu diseño, un diseño que viste o para tu negocio</p>
+  </a>
+
+</section>
+
+<footer>
+  CHECHENA SHIRTS © 2026
+</footer>
+
+</body>
+</html>

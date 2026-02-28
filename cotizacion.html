@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cotización | Chechena Shirts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Fondo animado tipo galaxia */
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(45deg,#0f0f0f,#111111,#1a1a1a,#0f0f0f);
+    background-size:400% 400%;
+    animation:gradientMove 20s ease infinite;
+    z-index:-2;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* Partículas estilo estrellas */
+.background::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity:0.15;
+    animation:moveParticles 60s linear infinite;
+}
+
+@keyframes moveParticles{
+    from{background-position:0 0;}
+    to{background-position:1000px 1000px;}
+}
+
+.container{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    text-align:center;
+}
+
+/* Animación texto */
+.fade-up{
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 1.2s ease forwards;
+}
+
+.fade-up:nth-child(1){animation-delay:0.2s;}
+.fade-up:nth-child(2){animation-delay:0.5s;}
+.fade-up:nth-child(3){animation-delay:0.8s;}
+.fade-up:nth-child(4){animation-delay:1.1s;}
+.fade-up:nth-child(5){animation-delay:1.4s;}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    font-size:3rem;
+    font-weight:900;
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#00ffcc,#ffffff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitulo{
+    font-size:1.3rem;
+    color:#00ffcc;
+    margin-bottom:15px;
+    font-weight:600;
+}
+
+.descripcion{
+    max-width:800px;
+    font-size:1.05rem;
+    line-height:1.8;
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+/* Lista beneficios */
+.beneficios{
+    max-width:700px;
+    margin-bottom:30px;
+    text-align:left;
+}
+
+.beneficios li{
+    margin-bottom:8px;
+    color:#aaa;
+}
+
+/* Tarjeta del formulario */
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 30px rgba(0,255,200,0.15);
+    max-width:500px;
+    width:100%;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 40px rgba(0,255,200,0.4);
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    background:#1a1a1a;
+    color:white;
+    font-size:1rem;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00ffcc;
+    color:black;
+    font-weight:700;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+}
+
+.volver{
+    margin-top:20px;
+    text-decoration:none;
+    color:#00ffcc;
+    font-size:0.9rem;
+}
+
+.volver:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:2.2rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <h1 class="fade-up">Cotización Profesional</h1>
+
+    <div class="subtitulo fade-up">
+        ¿Quieres vender playeras pero no tienes diseños o quieres personalizar tus propias creaciones?
+    </div>
+
+    <p class="descripcion fade-up">
+        En <strong>Chechena Shirts</strong> ofrecemos soluciones para todos los emprendedores:
+        <ul class="beneficios">
+            <li>✔ Paquetes de diseño listos para vender</li>
+            <li>✔ Paquete Emprendedor con playeras, etiquetas y diseños para iniciar tu negocio</li>
+            <li>✔ Calculadora de precios para saber cuánto cobrar por tus playeras</li>
+            <li>✔ Cotizaciones personalizadas si ya tienes un diseño, viste uno o quieres tu propio estilo</li>
+        </ul>
+    </p>
+
+    <div class="card fade-up">
+        <form onsubmit="enviarCotizacion(event)">
+            <input type="text" id="nombre" placeholder="Nombre o Negocio" required>
+            <input type="number" id="cantidad" placeholder="Cantidad de Playeras" required>
+            <textarea id="descripcionInput" rows="4" placeholder="Describe tu idea, tipo de diseño, colores, ocasión o diseño que viste..." required></textarea>
+            <button type="submit">Solicitar Cotización</button>
+        </form>
+    </div>
+
+    <a href="index.html" class="volver fade-up">← Volver al Inicio</a>
+
+</div>
+
+<script>
+function enviarCotizacion(e){
+    e.preventDefault(); // evita que recargue la página
+
+    let nombre = document.getElementById("nombre").value;
+    let cantidad = document.getElementById("cantidad").value;
+    let descripcion = document.getElementById("descripcionInput").value;
+
+    let mensaje = `Hola, quiero solicitar una cotización:\n\nNombre/Negocio: ${nombre}\nCantidad: ${cantidad}\nDetalles: ${descripcion}`;
+
+    let numero = "529212337934"; // tu número de WhatsApp
+    let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
